@@ -10,7 +10,10 @@ public class No {
 	}
 	No (char letra){
 		this.letra = letra;
+		this.esq = null;
+		this.dir = null;
 	}
+	
 	No (No esq, No dir){
 		this.esq = esq;
 		this.dir = dir;
@@ -26,19 +29,20 @@ public class No {
 	
 	public void emOrdem(No raiz) {
 		if(raiz != null) {
-			preOrdem(raiz.getEsq());
+			emOrdem(raiz.getEsq());
 			System.out.print(raiz.getLetra() + " ");
-			preOrdem(raiz.getDir());
+			emOrdem(raiz.getDir());
 		}
 	}
 	
 	public void posOrdem(No raiz) {
 		if(raiz != null) {
-			preOrdem(raiz.getEsq());
-			preOrdem(raiz.getDir());
+			posOrdem(raiz.getEsq());
+			posOrdem (raiz.getDir());
 			System.out.print(raiz.getLetra()+ " ");
 		}
 	}
+	
 	
 	
 	public char getLetra() {
