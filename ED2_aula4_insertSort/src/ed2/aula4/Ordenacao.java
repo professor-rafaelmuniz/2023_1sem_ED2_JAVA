@@ -45,7 +45,7 @@ public class Ordenacao {
 					vet[j+1] = vet[j];
 					vet[j] = aux;
 				}else {
-					vet[j+1] = aux;
+					//vet[j+1] = aux;
 					break;
 				}
 			}
